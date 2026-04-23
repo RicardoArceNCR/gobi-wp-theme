@@ -1,0 +1,77 @@
+.
+├── AI_WORKFLOW.md
+├── CLAUDE.md
+├── INICIO_actualizado (1).md
+├── INICIO_actualizado.md
+├── INICIO_nuevo.md
+├── LICENSE.md
+├── README.md
+├── SKILLS.md
+├── app
+│   ├── Providers
+│   │   └── ThemeServiceProvider.php
+│   ├── View
+│   │   └── Composers
+│   │       ├── App.php
+│   │       ├── Comments.php
+│   │       └── Post.php
+│   ├── filters.php
+│   ├── hooks.php
+│   └── setup.php
+├── composer.json
+├── composer.lock
+├── functions.php
+├── index.php
+├── package-lock.json
+├── package.json
+├── project_wp_tree.txt
+├── public
+│   └── build
+│       ├── assets
+│       │   ├── app-34mOoJaZ.js
+│       │   ├── app-CkQMsFc-.css
+│       │   ├── editor-B2zlC6XX.css
+│       │   ├── editor-DRWDEw-3.js
+│       │   ├── editor.deps-DxpY22xl.json
+│       │   └── theme.json
+│       └── manifest.json
+├── resources
+│   ├── css
+│   │   ├── app.css
+│   │   └── editor.css
+│   ├── fonts
+│   ├── images
+│   ├── js
+│   │   ├── app.js
+│   │   └── editor.js
+│   └── views
+│       ├── 404.blade.php
+│       ├── components
+│       │   └── alert.blade.php
+│       ├── forms
+│       │   └── search.blade.php
+│       ├── index.blade.php
+│       ├── layouts
+│       │   └── app.blade.php
+│       ├── page.blade.php
+│       ├── partials
+│       │   ├── comments.blade.php
+│       │   ├── content-page.blade.php
+│       │   ├── content-search.blade.php
+│       │   ├── content-single.blade.php
+│       │   ├── content.blade.php
+│       │   ├── entry-meta.blade.php
+│       │   └── page-header.blade.php
+│       ├── search.blade.php
+│       ├── sections
+│       │   ├── footer.blade.php
+│       │   ├── header.blade.php
+│       │   └── sidebar.blade.php
+│       ├── single.blade.php
+│       └── template-custom.blade.php
+├── screenshot.png
+├── style.css
+├── theme.json
+└── vite.config.js
+
+19 directories, 56 files
