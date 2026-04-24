@@ -3,6 +3,10 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+.env.local
+gobi-theme-contenido.txt
+project_wp_tree.txt
+
 # Build
 public/build/
 dist/
@@ -23,3 +27,4 @@ vendor/
 # IDE
 .vscode/
 .idea/
+

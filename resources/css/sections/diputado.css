@@ -1,0 +1,452 @@
+/* Estilos específicos para páginas de diputados */
+
+/* Diputado header */
+.gobi-diputado-header {
+  padding: clamp(3rem, 6vw, 4rem) 0;
+  background: linear-gradient(135deg, var(--gobi-color-bg) 0%, var(--gobi-color-surface) 100%);
+  border-bottom: 1px solid var(--gobi-color-border);
+}
+
+.gobi-diputado-header__container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--gobi-space-6);
+  align-items: center;
+}
+
+.gobi-diputado-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gobi-color-surface);
+  box-shadow: var(--gobi-shadow-md);
+}
+
+.gobi-diputado-info {
+  max-width: var(--gobi-reading-width);
+}
+
+.gobi-diputado-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--gobi-space-3);
+  color: var(--gobi-color-text);
+  line-height: 1.1;
+}
+
+.gobi-diputado-position {
+  font-size: var(--gobi-text-xl);
+  color: var(--gobi-color-accent);
+  margin-bottom: var(--gobi-space-4);
+  font-weight: 600;
+}
+
+.gobi-diputado-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gobi-space-4);
+  margin-bottom: var(--gobi-space-6);
+}
+
+.gobi-diputado-contact {
+  display: flex;
+  gap: var(--gobi-space-3);
+  flex-wrap: wrap;
+}
+
+/* Diputado bio */
+.gobi-diputado-bio {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-surface);
+}
+
+.gobi-diputado-bio__content {
+  max-width: var(--gobi-reading-width);
+  margin: 0 auto;
+  font-size: var(--gobi-text-lg);
+  line-height: 1.7;
+  color: var(--gobi-color-text);
+}
+
+/* Diputado details grid */
+.gobi-diputado-details {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-diputado-details__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gobi-space-6);
+}
+
+.gobi-diputado-card {
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-6);
+  height: fit-content;
+}
+
+.gobi-diputado-card__title {
+  font-size: var(--gobi-text-lg);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-4);
+  color: var(--gobi-color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-diputado-card__title::before {
+  content: "";
+  width: 4px;
+  height: 24px;
+  background-color: var(--gobi-color-accent);
+  border-radius: 2px;
+}
+
+/* Legislative info */
+.gobi-legislative-info {
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-legislative-info__item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--gobi-space-3) 0;
+  border-bottom: 1px solid var(--gobi-color-border);
+}
+
+.gobi-legislative-info__item:last-child {
+  border-bottom: none;
+}
+
+.gobi-legislative-info__label {
+  font-weight: 600;
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-legislative-info__value {
+  color: var(--gobi-color-text);
+  text-align: right;
+}
+
+/* Commissions */
+.gobi-commissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-commission-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+  padding: var(--gobi-space-3);
+  background-color: var(--gobi-color-bg);
+  border-radius: var(--gobi-radius-md);
+  transition: background-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-commission-item:hover {
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+.gobi-commission-item__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--gobi-color-accent);
+  flex-shrink: 0;
+}
+
+.gobi-commission-item__name {
+  font-weight: 500;
+  color: var(--gobi-color-text);
+}
+
+.gobi-commission-item__role {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+  margin-left: auto;
+}
+
+/* Contact info */
+.gobi-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+  color: var(--gobi-color-text);
+}
+
+.gobi-contact-item__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--gobi-color-accent);
+  flex-shrink: 0;
+}
+
+.gobi-contact-item__text {
+  line-height: 1.4;
+}
+
+/* Social links */
+.gobi-social-links {
+  display: flex;
+  gap: var(--gobi-space-3);
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: 50%;
+  color: var(--gobi-color-text-soft);
+  text-decoration: none;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-social-link:hover {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+/* Activity section */
+.gobi-diputado-activity {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-surface);
+}
+
+.gobi-diputado-activity__header {
+  text-align: center;
+  margin-bottom: var(--gobi-space-8);
+}
+
+.gobi-diputado-activity__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-4);
+  color: var(--gobi-color-text);
+}
+
+.gobi-diputado-activity__tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--gobi-space-2);
+  margin-bottom: var(--gobi-space-6);
+  flex-wrap: wrap;
+}
+
+.gobi-diputado-activity__tab {
+  padding: var(--gobi-space-3) var(--gobi-space-6);
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  color: var(--gobi-color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-diputado-activity__tab:hover,
+.gobi-diputado-activity__tab--active {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+/* Activity content */
+.gobi-activity-content {
+  max-width: var(--gobi-reading-width);
+  margin: 0 auto;
+}
+
+.gobi-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gobi-space-6);
+}
+
+.gobi-activity-item {
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-6);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-activity-item:hover {
+  transform: translateY(-2px);
+}
+
+.gobi-activity-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-activity-item__title {
+  font-size: var(--gobi-text-lg);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gobi-activity-item__meta {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-activity-item__type {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gobi-space-2);
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+  background-color: var(--gobi-color-accent);
+  color: white;
+  border-radius: var(--gobi-radius-md);
+  font-size: var(--gobi-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.gobi-activity-item__content {
+  color: var(--gobi-color-text);
+  line-height: 1.6;
+}
+
+.gobi-activity-item__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--gobi-space-4);
+  padding-top: var(--gobi-space-4);
+  border-top: 1px solid var(--gobi-color-border);
+}
+
+.gobi-activity-item__date {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-activity-item__link {
+  color: var(--gobi-color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--gobi-text-sm);
+  transition: color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-activity-item__link:hover {
+  color: var(--gobi-color-accent-strong);
+  text-decoration: underline;
+}
+
+/* Voting record */
+.gobi-voting-record {
+  margin-top: var(--gobi-space-6);
+}
+
+.gobi-voting-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--gobi-space-4);
+  margin-bottom: var(--gobi-space-6);
+}
+
+.gobi-voting-stat {
+  text-align: center;
+  padding: var(--gobi-space-4);
+  background-color: var(--gobi-color-bg);
+  border-radius: var(--gobi-radius-md);
+  border: 1px solid var(--gobi-color-border);
+}
+
+.gobi-voting-stat__number {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 800;
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gobi-voting-stat--yes .gobi-voting-stat__number {
+  color: #16a34a;
+}
+
+.gobi-voting-stat--no .gobi-voting-stat__number {
+  color: #dc2626;
+}
+
+.gobi-voting-stat--abstention .gobi-voting-stat__number {
+  color: #ea580c;
+}
+
+.gobi-voting-stat__label {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gobi-diputado-header__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .gobi-diputado-photo {
+    margin: 0 auto var(--gobi-space-4);
+  }
+
+  .gobi-diputado-contact {
+    justify-content: center;
+  }
+
+  .gobi-diputado-details__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-diputado-activity__tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gobi-activity-item__header {
+    flex-direction: column;
+    gap: var(--gobi-space-3);
+  }
+
+  .gobi-voting-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gobi-voting-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-social-links {
+    justify-content: center;
+  }
+}

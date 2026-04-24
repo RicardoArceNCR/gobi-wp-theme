@@ -123,6 +123,10 @@ En Sage la misión es presentar, no gobernar.
 - View Composers
 - helpers visuales
 - templates del front
+- sistema de estilos CSS estructurado
+- componentes visuales compartidos
+- tokens globales de diseño
+- compatibilidad visual con WordPress
 
 ### No hacer
 - reglas de workflow
@@ -130,11 +134,16 @@ En Sage la misión es presentar, no gobernar.
 - queries complejas repetidas en Blade
 - JS y CSS gigantes inline
 - autorización real
+- estilos improvisados por página sin sistema
+- mezclar tokens con hacks visuales
+- depender de overrides caóticos
+- resolver cada pantalla con clases nuevas sin criterio
 
 ### Patrón preferido
 - Composer reúne datos
 - Blade renderiza
 - plugin decide negocio
+- sistema de estilos organiza la presentación
 
 ---
 
@@ -315,3 +324,92 @@ Cuando haya varias soluciones posibles, elegir la que mejor cumpla esto:
 - **La autorización real vive en plugin + capabilities.**
 - **La bitácora importante vive en tabla propia.**
 - **WordPress v1 debe ser nativa, sólida y mantenible.**
+- **El theme GOBi es la fuente oficial del lenguaje visual.**
+- **Los estilos se organizan por capas, no por página.**
+- **Los overrides son temporales, comentados y controlados.**
+- **Los componentes reutilizables antes que estilos específicos.**
+
+---
+
+## Skill 13 — Sistema de estilos del theme
+
+El theme principal de GOBi debe ser la fuente oficial del lenguaje visual.
+
+### Orden correcto de estilos
+1. tokens
+2. reset
+3. base
+4. typography
+5. layout
+6. components
+7. sections
+8. vendors
+9. overrides
+
+### Reglas
+- no crear estilos sin clasificar su capa
+- no repetir patrones de spacing o layout ya existentes
+- no mezclar compatibilidad WordPress con componentes del producto
+- no dejar deuda visual fuera de overrides comentados
+- construir componentes reutilizables antes que estilos específicos de una sola página
+
+### Estructura de directorios
+```
+resources/css/
+├── app.css (índice de imports)
+├── core/
+│   ├── tokens.css
+│   ├── reset.css
+│   ├── base.css
+│   ├── typography.css
+│   ├── layout.css
+│   └── utilities.css
+├── components/
+│   ├── buttons.css
+│   ├── cards.css
+│   ├── forms.css
+│   ├── nav.css
+│   ├── badges.css
+│   ├── tables.css
+│   └── modals.css
+├── sections/
+│   ├── home.css
+│   ├── proyecto.css
+│   ├── diputado.css
+│   └── comision.css
+├── vendors/
+│   ├── wordpress.css
+│   └── editor.css
+└── overrides/
+    ├── legacy.css
+    └── plugins.css
+```
+
+### Tokens globales
+- colores semánticos
+- tipografía base
+- espaciado base
+- sistema de containers
+- grid/layout base
+- sistema de headings
+- colores semánticos
+- estados visuales comunes
+- utilidades mínimas y controladas
+
+### Componentes compartidos
+- botones
+- cards
+- badges/chips
+- formularios
+- tablas
+- navegación
+- paginación
+- estados vacíos
+- loaders/skeletons
+- modals o drawers
+
+### Overrides controlados
+- solo lo que todavía no pudiste refactorizar
+- formato obligatorio con comentario de motivo
+- debe incluir fecha estimada de eliminación
+- no debe crecer sin límite

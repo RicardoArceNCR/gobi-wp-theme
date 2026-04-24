@@ -1,0 +1,398 @@
+/* Estilos específicos para páginas de proyectos */
+
+/* Project header */
+.gobi-project-header {
+  padding: clamp(3rem, 6vw, 4rem) 0;
+  background: linear-gradient(135deg, var(--gobi-color-bg) 0%, var(--gobi-color-surface) 100%);
+  border-bottom: 1px solid var(--gobi-color-border);
+}
+
+.gobi-project-header__container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--gobi-space-6);
+  align-items: start;
+}
+
+.gobi-project-header__content {
+  max-width: var(--gobi-reading-width);
+}
+
+.gobi-project-header__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--gobi-space-4);
+  color: var(--gobi-color-text);
+  line-height: 1.1;
+}
+
+.gobi-project-header__subtitle {
+  font-size: var(--gobi-text-xl);
+  color: var(--gobi-color-text-soft);
+  margin-bottom: var(--gobi-space-4);
+  line-height: 1.4;
+}
+
+.gobi-project-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gobi-space-4);
+  margin-bottom: var(--gobi-space-6);
+}
+
+.gobi-project-header__actions {
+  display: flex;
+  gap: var(--gobi-space-3);
+  flex-wrap: wrap;
+}
+
+/* Project sidebar */
+.gobi-project-sidebar {
+  width: 300px;
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-6);
+  height: fit-content;
+  position: sticky;
+  top: var(--gobi-space-6);
+}
+
+.gobi-project-sidebar__section {
+  margin-bottom: var(--gobi-space-6);
+}
+
+.gobi-project-sidebar__section:last-child {
+  margin-bottom: 0;
+}
+
+.gobi-project-sidebar__title {
+  font-size: var(--gobi-text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gobi-color-text-soft);
+  margin-bottom: var(--gobi-space-3);
+}
+
+.gobi-project-sidebar__content {
+  color: var(--gobi-color-text);
+  line-height: 1.6;
+}
+
+/* Project content */
+.gobi-project-content {
+  padding: var(--gobi-space-8) 0;
+}
+
+.gobi-project-content__container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--gobi-space-8);
+}
+
+.gobi-project-main {
+  max-width: var(--gobi-reading-width);
+}
+
+.gobi-project-section {
+  margin-bottom: var(--gobi-space-8);
+}
+
+.gobi-project-section:last-child {
+  margin-bottom: 0;
+}
+
+.gobi-project-section__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-4);
+  color: var(--gobi-color-text);
+  border-bottom: 2px solid var(--gobi-color-accent);
+  padding-bottom: var(--gobi-space-2);
+}
+
+.gobi-project-section__content {
+  color: var(--gobi-color-text);
+  line-height: 1.7;
+}
+
+.gobi-project-section__content p {
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-project-section__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Project gallery */
+.gobi-project-gallery {
+  margin-bottom: var(--gobi-space-6);
+}
+
+.gobi-project-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--gobi-space-4);
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-project-gallery__item {
+  position: relative;
+  border-radius: var(--gobi-radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-project-gallery__item:hover {
+  transform: scale(1.02);
+}
+
+.gobi-project-gallery__item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gobi-project-gallery__item--featured {
+  grid-column: span 2;
+}
+
+.gobi-project-gallery__item--featured img {
+  height: 400px;
+}
+
+/* Project documents */
+.gobi-project-documents {
+  margin-top: var(--gobi-space-6);
+}
+
+.gobi-project-documents__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gobi-space-3);
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-project-document {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+  padding: var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  text-decoration: none;
+  color: var(--gobi-color-text);
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-project-document:hover {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-project-document__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--gobi-color-accent);
+  flex-shrink: 0;
+}
+
+.gobi-project-document__info {
+  flex: 1;
+}
+
+.gobi-project-document__title {
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-1);
+}
+
+.gobi-project-document__meta {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+/* Project timeline */
+.gobi-project-timeline {
+  margin-top: var(--gobi-space-6);
+}
+
+.gobi-project-timeline__list {
+  position: relative;
+  padding-left: var(--gobi-space-6);
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-project-timeline__list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--gobi-color-border);
+}
+
+.gobi-project-timeline__item {
+  position: relative;
+  margin-bottom: var(--gobi-space-6);
+}
+
+.gobi-project-timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.gobi-project-timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--gobi-color-accent);
+  border-radius: 50%;
+  border: 3px solid var(--gobi-color-surface);
+}
+
+.gobi-project-timeline__date {
+  font-size: var(--gobi-text-sm);
+  font-weight: 600;
+  color: var(--gobi-color-accent);
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gobi-project-timeline__title {
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gobi-project-timeline__description {
+  color: var(--gobi-color-text-soft);
+  line-height: 1.6;
+}
+
+/* Project team */
+.gobi-project-team {
+  margin-top: var(--gobi-space-6);
+}
+
+.gobi-project-team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gobi-space-4);
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-project-team-member {
+  text-align: center;
+  padding: var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-project-team-member:hover {
+  transform: translateY(-2px);
+}
+
+.gobi-project-team-member__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--gobi-space-3);
+  object-fit: cover;
+}
+
+.gobi-project-team-member__name {
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-1);
+}
+
+.gobi-project-team-member__role {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+/* Related projects */
+.gobi-related-projects {
+  padding: clamp(3rem, 6vw, 4rem) 0;
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-related-projects__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-6);
+  color: var(--gobi-color-text);
+  text-align: center;
+}
+
+.gobi-related-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gobi-space-6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .gobi-project-header__container {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-project-content__container {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-project-sidebar {
+    width: 100%;
+    position: static;
+    order: -1;
+  }
+
+  .gobi-project-gallery__item--featured {
+    grid-column: span 1;
+  }
+
+  .gobi-project-gallery__item--featured img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gobi-project-header__actions {
+    flex-direction: column;
+  }
+
+  .gobi-project-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-project-team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gobi-related-projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gobi-project-team__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-project-timeline__list {
+    padding-left: var(--gobi-space-4);
+  }
+
+  .gobi-project-timeline__item::before {
+    left: -19px;
+  }
+}

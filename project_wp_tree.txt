@@ -1,9 +1,7 @@
 .
 ├── AI_WORKFLOW.md
 ├── CLAUDE.md
-├── INICIO_actualizado (1).md
-├── INICIO_actualizado.md
-├── INICIO_nuevo.md
+├── INICIO.md
 ├── LICENSE.md
 ├── README.md
 ├── SKILLS.md
@@ -29,16 +27,42 @@
 │   └── build
 │       ├── assets
 │       │   ├── app-34mOoJaZ.js
-│       │   ├── app-CkQMsFc-.css
-│       │   ├── editor-B2zlC6XX.css
+│       │   ├── app-DxK7DqUF.css
 │       │   ├── editor-DRWDEw-3.js
+│       │   ├── editor-DS8PThBJ.css
 │       │   ├── editor.deps-DxpY22xl.json
 │       │   └── theme.json
 │       └── manifest.json
 ├── resources
 │   ├── css
 │   │   ├── app.css
-│   │   └── editor.css
+│   │   ├── components
+│   │   │   ├── badges.css
+│   │   │   ├── buttons.css
+│   │   │   ├── cards.css
+│   │   │   ├── forms.css
+│   │   │   ├── modals.css
+│   │   │   ├── nav.css
+│   │   │   └── tables.css
+│   │   ├── core
+│   │   │   ├── base.css
+│   │   │   ├── layout.css
+│   │   │   ├── reset.css
+│   │   │   ├── tokens.css
+│   │   │   ├── typography.css
+│   │   │   └── utilities.css
+│   │   ├── editor.css
+│   │   ├── overrides
+│   │   │   ├── legacy.css
+│   │   │   └── plugins.css
+│   │   ├── sections
+│   │   │   ├── comision.css
+│   │   │   ├── diputado.css
+│   │   │   ├── home.css
+│   │   │   └── proyecto.css
+│   │   └── vendors
+│   │       ├── editor.css
+│   │       └── wordpress.css
 │   ├── fonts
 │   ├── images
 │   ├── js
@@ -74,4 +98,4 @@
 ├── theme.json
 └── vite.config.js
 
-19 directories, 56 files
+24 directories, 75 files

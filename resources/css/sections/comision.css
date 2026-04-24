@@ -1,0 +1,581 @@
+/* Estilos específicos para páginas de comisiones */
+
+/* Comisión header */
+.gobi-comision-header {
+  padding: clamp(3rem, 6vw, 4rem) 0;
+  background: linear-gradient(135deg, var(--gobi-color-bg) 0%, var(--gobi-color-surface) 100%);
+  border-bottom: 1px solid var(--gobi-color-border);
+}
+
+.gobi-comision-header__container {
+  text-align: center;
+}
+
+.gobi-comision-logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--gobi-space-6);
+  padding: var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  border-radius: 50%;
+  border: 4px solid var(--gobi-color-accent);
+  box-shadow: var(--gobi-shadow-md);
+}
+
+.gobi-comision-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--gobi-space-3);
+  color: var(--gobi-color-text);
+  line-height: 1.1;
+}
+
+.gobi-comision-type {
+  font-size: var(--gobi-text-xl);
+  color: var(--gobi-color-accent);
+  margin-bottom: var(--gobi-space-4);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gobi-comision-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: var(--gobi-text-lg);
+  line-height: 1.7;
+  color: var(--gobi-color-text-soft);
+}
+
+/* Comisión leadership */
+.gobi-comision-leadership {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-surface);
+}
+
+.gobi-comision-leadership__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-6);
+  color: var(--gobi-color-text);
+  text-align: center;
+}
+
+.gobi-comision-leadership__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--gobi-space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gobi-leader-card {
+  text-align: center;
+  padding: var(--gobi-space-6);
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-leader-card:hover {
+  transform: translateY(-4px);
+}
+
+.gobi-leader-card__photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto var(--gobi-space-4);
+  object-fit: cover;
+  border: 3px solid var(--gobi-color-accent);
+}
+
+.gobi-leader-card__name {
+  font-size: var(--gobi-text-lg);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-2);
+  color: var(--gobi-color-text);
+}
+
+.gobi-leader-card__role {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-accent);
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gobi-leader-card__party {
+  font-size: var(--gobi-text-base);
+  color: var(--gobi-color-text-soft);
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-leader-card__contact {
+  display: flex;
+  justify-content: center;
+  gap: var(--gobi-space-3);
+}
+
+/* Comisión members */
+.gobi-comision-members {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-comision-members__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gobi-space-6);
+  flex-wrap: wrap;
+  gap: var(--gobi-space-4);
+}
+
+.gobi-comision-members__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  color: var(--gobi-color-text);
+}
+
+.gobi-comision-members__count {
+  font-size: var(--gobi-text-lg);
+  color: var(--gobi-color-text-soft);
+  font-weight: 600;
+}
+
+.gobi-comision-members__filter {
+  display: flex;
+  gap: var(--gobi-space-3);
+  flex-wrap: wrap;
+}
+
+.gobi-comision-members__filter-button {
+  padding: var(--gobi-space-2) var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  color: var(--gobi-color-text);
+  font-size: var(--gobi-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-comision-members__filter-button:hover,
+.gobi-comision-members__filter-button--active {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+.gobi-comision-members__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--gobi-space-5);
+}
+
+.gobi-member-card {
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-5);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-member-card:hover {
+  transform: translateY(-2px);
+}
+
+.gobi-member-card__header {
+  display: flex;
+  gap: var(--gobi-space-4);
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-member-card__photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gobi-color-border);
+  flex-shrink: 0;
+}
+
+.gobi-member-card__info {
+  flex: 1;
+}
+
+.gobi-member-card__name {
+  font-size: var(--gobi-text-lg);
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-1);
+  color: var(--gobi-color-text);
+  line-height: 1.2;
+}
+
+.gobi-member-card__party {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-accent);
+  font-weight: 500;
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gobi-member-card__role {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-member-card__contact {
+  display: flex;
+  gap: var(--gobi-space-2);
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-member-card__contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: 50%;
+  color: var(--gobi-color-text-soft);
+  text-decoration: none;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-member-card__contact-link:hover {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+/* Comisión sessions */
+.gobi-comision-sessions {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-surface);
+}
+
+.gobi-comision-sessions__header {
+  text-align: center;
+  margin-bottom: var(--gobi-space-8);
+}
+
+.gobi-comision-sessions__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-4);
+  color: var(--gobi-color-text);
+}
+
+.gobi-comision-sessions__subtitle {
+  font-size: var(--gobi-text-lg);
+  color: var(--gobi-color-text-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gobi-sessions-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: var(--gobi-space-6);
+}
+
+.gobi-sessions-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--gobi-color-border);
+}
+
+.gobi-session-item {
+  position: relative;
+  margin-bottom: var(--gobi-space-8);
+}
+
+.gobi-session-item:last-child {
+  margin-bottom: 0;
+}
+
+.gobi-session-item::before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--gobi-color-accent);
+  border-radius: 50%;
+  border: 4px solid var(--gobi-color-surface);
+}
+
+.gobi-session-card {
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-6);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-session-card:hover {
+  transform: translateY(-2px);
+}
+
+.gobi-session-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--gobi-space-4);
+  flex-wrap: wrap;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-session-card__date {
+  font-size: var(--gobi-text-lg);
+  font-weight: 700;
+  color: var(--gobi-color-accent);
+}
+
+.gobi-session-card__type {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gobi-space-2);
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-accent);
+  color: var(--gobi-color-accent);
+  border-radius: var(--gobi-radius-md);
+  font-size: var(--gobi-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.gobi-session-card__title {
+  font-size: var(--gobi-text-xl);
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-3);
+  color: var(--gobi-color-text);
+  line-height: 1.3;
+}
+
+.gobi-session-card__description {
+  color: var(--gobi-color-text-soft);
+  line-height: 1.6;
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-session-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--gobi-space-4);
+  border-top: 1px solid var(--gobi-color-border);
+  flex-wrap: wrap;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-session-card__location {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-2);
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-session-card__actions {
+  display: flex;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-session-card__link {
+  color: var(--gobi-color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--gobi-text-sm);
+  transition: color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-session-card__link:hover {
+  color: var(--gobi-color-accent-strong);
+  text-decoration: underline;
+}
+
+/* Comisión documents */
+.gobi-comision-documents {
+  padding: var(--gobi-space-8) 0;
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-comision-documents__title {
+  font-size: var(--gobi-text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--gobi-space-6);
+  color: var(--gobi-color-text);
+  text-align: center;
+}
+
+.gobi-documents-categories {
+  display: flex;
+  justify-content: center;
+  gap: var(--gobi-space-4);
+  margin-bottom: var(--gobi-space-8);
+  flex-wrap: wrap;
+}
+
+.gobi-documents-category {
+  padding: var(--gobi-space-3) var(--gobi-space-6);
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  color: var(--gobi-color-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-documents-category:hover,
+.gobi-documents-category--active {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+.gobi-documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gobi-space-6);
+}
+
+.gobi-document-card {
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-5);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-document-card:hover {
+  transform: translateY(-2px);
+}
+
+.gobi-document-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-document-card__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--gobi-color-accent);
+  flex-shrink: 0;
+}
+
+.gobi-document-card__title {
+  font-size: var(--gobi-text-lg);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  line-height: 1.3;
+}
+
+.gobi-document-card__description {
+  color: var(--gobi-color-text-soft);
+  line-height: 1.6;
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-document-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-document-card__actions {
+  display: flex;
+  gap: var(--gobi-space-3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gobi-comision-leadership__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-comision-members__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gobi-comision-members__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gobi-sessions-timeline {
+    padding-left: var(--gobi-space-4);
+  }
+
+  .gobi-session-item::before {
+    left: -19px;
+  }
+
+  .gobi-session-card__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gobi-session-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gobi-documents-categories {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gobi-documents-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gobi-comision-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .gobi-leader-card__photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .gobi-member-card__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gobi-member-card__contact {
+    justify-content: center;
+  }
+}

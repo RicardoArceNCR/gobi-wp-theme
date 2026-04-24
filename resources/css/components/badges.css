@@ -1,0 +1,244 @@
+/* Sistema de badges/chips GOBi */
+.gobi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gobi-space-1);
+  padding: var(--gobi-space-1) var(--gobi-space-3);
+  font-size: var(--gobi-text-xs);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--gobi-radius-lg);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Badge variants */
+.gobi-badge--primary {
+  background-color: var(--gobi-color-accent);
+  color: white;
+}
+
+.gobi-badge--secondary {
+  background-color: var(--gobi-color-bg);
+  color: var(--gobi-color-text);
+  border-color: var(--gobi-color-border);
+}
+
+.gobi-badge--success {
+  background-color: #16a34a;
+  color: white;
+}
+
+.gobi-badge--warning {
+  background-color: #ea580c;
+  color: white;
+}
+
+.gobi-badge--error {
+  background-color: #dc2626;
+  color: white;
+}
+
+.gobi-badge--info {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.gobi-badge--outline {
+  background-color: transparent;
+  color: var(--gobi-color-text);
+  border-color: var(--gobi-color-border);
+}
+
+.gobi-badge--ghost {
+  background-color: var(--gobi-color-bg);
+  color: var(--gobi-color-text-soft);
+}
+
+/* Badge sizes */
+.gobi-badge--sm {
+  padding: var(--gobi-space-1) var(--gobi-space-2);
+  font-size: 10px;
+}
+
+.gobi-badge--lg {
+  padding: var(--gobi-space-2) var(--gobi-space-4);
+  font-size: var(--gobi-text-sm);
+}
+
+/* Badge with icon */
+.gobi-badge__icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.gobi-badge--sm .gobi-badge__icon {
+  width: 10px;
+  height: 10px;
+}
+
+.gobi-badge--lg .gobi-badge__icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Removable badge */
+.gobi-badge--removable {
+  padding-right: var(--gobi-space-2);
+}
+
+.gobi-badge__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-badge__remove:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.gobi-badge__remove::before {
+  content: "×";
+  font-size: 12px;
+  line-height: 1;
+  color: currentColor;
+}
+
+/* Badge groups */
+.gobi-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gobi-space-2);
+}
+
+.gobi-badge-group--center {
+  justify-content: center;
+}
+
+.gobi-badge-group--end {
+  justify-content: flex-end;
+}
+
+/* Status badges */
+.gobi-badge--active {
+  background-color: #16a34a;
+  color: white;
+}
+
+.gobi-badge--inactive {
+  background-color: var(--gobi-color-bg);
+  color: var(--gobi-color-text-soft);
+  border-color: var(--gobi-color-border);
+}
+
+.gobi-badge--pending {
+  background-color: #ea580c;
+  color: white;
+}
+
+.gobi-badge--draft {
+  background-color: var(--gobi-color-bg);
+  color: var(--gobi-color-text-soft);
+  border-color: var(--gobi-color-border);
+}
+
+/* Count badges */
+.gobi-badge--count {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--gobi-space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.gobi-badge--count--sm {
+  min-width: 16px;
+  height: 16px;
+  font-size: 10px;
+}
+
+.gobi-badge--count--lg {
+  min-width: 24px;
+  height: 24px;
+  font-size: 12px;
+}
+
+/* Dot indicator */
+.gobi-badge--dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  padding: 0;
+  min-width: auto;
+}
+
+.gobi-badge--dot--sm {
+  width: 6px;
+  height: 6px;
+}
+
+.gobi-badge--dot--lg {
+  width: 10px;
+  height: 10px;
+}
+
+/* Pill badges */
+.gobi-badge--pill {
+  border-radius: 50px;
+}
+
+/* Interactive badges */
+.gobi-badge--interactive {
+  cursor: pointer;
+  transition: 
+    transform var(--gobi-duration-fast) var(--gobi-ease-standard),
+    box-shadow var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-badge--interactive:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--gobi-shadow-sm);
+}
+
+/* Badge with tooltip */
+.gobi-badge--tooltip {
+  position: relative;
+}
+
+.gobi-badge--tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--gobi-color-text);
+  color: white;
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+  border-radius: var(--gobi-radius-sm);
+  font-size: var(--gobi-text-xs);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity var(--gobi-duration-fast) var(--gobi-ease-standard),
+    visibility var(--gobi-duration-fast) var(--gobi-ease-standard);
+  z-index: 1000;
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gobi-badge--tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+}

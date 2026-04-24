@@ -1,0 +1,105 @@
+/* Utilidades mínimas y controladas de GOBI */
+
+/* Spacing utilities */
+.gobi-p-0 { padding: 0; }
+.gobi-p-1 { padding: var(--gobi-space-1); }
+.gobi-p-2 { padding: var(--gobi-space-2); }
+.gobi-p-3 { padding: var(--gobi-space-3); }
+.gobi-p-4 { padding: var(--gobi-space-4); }
+.gobi-p-5 { padding: var(--gobi-space-5); }
+.gobi-p-6 { padding: var(--gobi-space-6); }
+.gobi-p-7 { padding: var(--gobi-space-7); }
+.gobi-p-8 { padding: var(--gobi-space-8); }
+
+.gobi-px-0 { padding-left: 0; padding-right: 0; }
+.gobi-px-1 { padding-left: var(--gobi-space-1); padding-right: var(--gobi-space-1); }
+.gobi-px-2 { padding-left: var(--gobi-space-2); padding-right: var(--gobi-space-2); }
+.gobi-px-3 { padding-left: var(--gobi-space-3); padding-right: var(--gobi-space-3); }
+.gobi-px-4 { padding-left: var(--gobi-space-4); padding-right: var(--gobi-space-4); }
+.gobi-px-5 { padding-left: var(--gobi-space-5); padding-right: var(--gobi-space-5); }
+.gobi-px-6 { padding-left: var(--gobi-space-6); padding-right: var(--gobi-space-6); }
+
+.gobi-py-0 { padding-top: 0; padding-bottom: 0; }
+.gobi-py-1 { padding-top: var(--gobi-space-1); padding-bottom: var(--gobi-space-1); }
+.gobi-py-2 { padding-top: var(--gobi-space-2); padding-bottom: var(--gobi-space-2); }
+.gobi-py-3 { padding-top: var(--gobi-space-3); padding-bottom: var(--gobi-space-3); }
+.gobi-py-4 { padding-top: var(--gobi-space-4); padding-bottom: var(--gobi-space-4); }
+.gobi-py-5 { padding-top: var(--gobi-space-5); padding-bottom: var(--gobi-space-5); }
+.gobi-py-6 { padding-top: var(--gobi-space-6); padding-bottom: var(--gobi-space-6); }
+
+.gobi-m-0 { margin: 0; }
+.gobi-m-1 { margin: var(--gobi-space-1); }
+.gobi-m-2 { margin: var(--gobi-space-2); }
+.gobi-m-3 { margin: var(--gobi-space-3); }
+.gobi-m-4 { margin: var(--gobi-space-4); }
+.gobi-m-5 { margin: var(--gobi-space-5); }
+.gobi-m-6 { margin: var(--gobi-space-6); }
+
+.gobi-mx-0 { margin-left: 0; margin-right: 0; }
+.gobi-mx-1 { margin-left: var(--gobi-space-1); margin-right: var(--gobi-space-1); }
+.gobi-mx-2 { margin-left: var(--gobi-space-2); margin-right: var(--gobi-space-2); }
+.gobi-mx-3 { margin-left: var(--gobi-space-3); margin-right: var(--gobi-space-3); }
+.gobi-mx-4 { margin-left: var(--gobi-space-4); margin-right: var(--gobi-space-4); }
+.gobi-mx-auto { margin-left: auto; margin-right: auto; }
+
+.gobi-my-0 { margin-top: 0; margin-bottom: 0; }
+.gobi-my-1 { margin-top: var(--gobi-space-1); margin-bottom: var(--gobi-space-1); }
+.gobi-my-2 { margin-top: var(--gobi-space-2); margin-bottom: var(--gobi-space-2); }
+.gobi-my-3 { margin-top: var(--gobi-space-3); margin-bottom: var(--gobi-space-3); }
+.gobi-my-4 { margin-top: var(--gobi-space-4); margin-bottom: var(--gobi-space-4); }
+
+/* Display utilities */
+.gobi-block { display: block; }
+.gobi-inline-block { display: inline-block; }
+.gobi-inline { display: inline; }
+.gobi-flex { display: flex; }
+.gobi-inline-flex { display: inline-flex; }
+.gobi-grid { display: grid; }
+.gobi-hidden { display: none; }
+
+/* Position utilities */
+.gobi-static { position: static; }
+.gobi-relative { position: relative; }
+.gobi-absolute { position: absolute; }
+.gobi-fixed { position: fixed; }
+.gobi-sticky { position: sticky; }
+
+/* Border utilities */
+.gobi-border { border: 1px solid var(--gobi-color-border); }
+.gobi-border-0 { border: 0; }
+.gobi-border-t { border-top: 1px solid var(--gobi-color-border); }
+.gobi-border-b { border-bottom: 1px solid var(--gobi-color-border); }
+.gobi-border-l { border-left: 1px solid var(--gobi-color-border); }
+.gobi-border-r { border-right: 1px solid var(--gobi-color-border); }
+
+/* Border radius */
+.gobi-rounded-none { border-radius: 0; }
+.gobi-rounded-sm { border-radius: var(--gobi-radius-sm); }
+.gobi-rounded { border-radius: var(--gobi-radius-md); }
+.gobi-rounded-md { border-radius: var(--gobi-radius-md); }
+.gobi-rounded-lg { border-radius: var(--gobi-radius-lg); }
+.gobi-rounded-full { border-radius: 50%; }
+
+/* Background utilities */
+.gobi-bg-surface { background-color: var(--gobi-color-surface); }
+.gobi-bg-bg { background-color: var(--gobi-color-bg); }
+.gobi-bg-accent { background-color: var(--gobi-color-accent); }
+.gobi-bg-transparent { background-color: transparent; }
+
+/* Shadow utilities */
+.gobi-shadow-sm { box-shadow: var(--gobi-shadow-sm); }
+.gobi-shadow { box-shadow: var(--gobi-shadow-md); }
+.gobi-shadow-none { box-shadow: none; }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .gobi-md-hidden { display: none; }
+  .gobi-md-block { display: block; }
+  .gobi-md-flex { display: flex; }
+}
+
+@media (min-width: 769px) {
+  .gobi-lg-hidden { display: none; }
+  .gobi-lg-block { display: block; }
+  .gobi-lg-flex { display: flex; }
+}

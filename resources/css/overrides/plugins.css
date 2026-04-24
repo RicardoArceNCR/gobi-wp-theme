@@ -1,0 +1,423 @@
+/* 
+ * COMPATIBILIDAD CON PLUGINS DE TERCEROS
+ * 
+ * Este archivo contiene estilos específicos para mantener compatibilidad visual
+ * con plugins populares de WordPress que no siguen los estándares del theme GOBi.
+ * 
+ * REGLA: Cada override de plugin debe incluir:
+ * 1. Nombre del plugin afectado
+ * 2. Descripción del conflicto visual
+ * 3. Solución aplicada
+ */
+
+/* 
+ * PLUGIN: Advanced Custom Fields (ACF)
+ * CONFLICTO: Los campos de formulario no usan los tokens del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con components/forms.css
+ */
+.acf-field input[type="text"],
+.acf-field input[type="email"],
+.acf-field input[type="number"],
+.acf-field input[type="url"],
+.acf-field textarea,
+.acf-field select {
+  border: 1px solid var(--gobi-color-border) !important;
+  border-radius: var(--gobi-radius-md) !important;
+  padding: var(--gobi-space-3) var(--gobi-space-4) !important;
+  background-color: var(--gobi-color-surface) !important;
+  color: var(--gobi-color-text) !important;
+  font-family: var(--gobi-font-sans) !important;
+  font-size: var(--gobi-text-base) !important;
+}
+
+.acf-field input:focus,
+.acf-field textarea:focus,
+.acf-field select:focus {
+  outline: none !important;
+  border-color: var(--gobi-color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1) !important;
+}
+
+.acf-field .acf-label label {
+  font-weight: 600 !important;
+  color: var(--gobi-color-text) !important;
+  font-size: var(--gobi-text-sm) !important;
+}
+
+.acf-field .acf-description {
+  font-size: var(--gobi-text-sm) !important;
+  color: var(--gobi-color-text-soft) !important;
+  margin-top: var(--gobi-space-2) !important;
+}
+
+/* Botones de ACF */
+.acf-button,
+.acf-field .button {
+  background-color: var(--gobi-color-accent) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--gobi-radius-md) !important;
+  padding: var(--gobi-space-3) var(--gobi-space-5) !important;
+  font-size: var(--gobi-text-base) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: 
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.acf-button:hover,
+.acf-field .button:hover {
+  background-color: var(--gobi-color-accent-strong) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 
+ * PLUGIN: Contact Form 7
+ * CONFLICTO: Los formularios no siguen el diseño del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con components/forms.css
+ */
+.wpcf7-form {
+  max-width: var(--gobi-reading-width);
+  margin: 0 auto;
+}
+
+.wpcf7-form p {
+  margin-bottom: var(--gobi-space-5);
+}
+
+.wpcf7-form label {
+  display: block;
+  font-size: var(--gobi-text-sm);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  margin-bottom: var(--gobi-space-2);
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea,
+.wpcf7-form select {
+  width: 100%;
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-3) var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  color: var(--gobi-color-text);
+  font-family: var(--gobi-font-sans);
+  font-size: var(--gobi-text-base);
+}
+
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus,
+.wpcf7-form select:focus {
+  outline: none;
+  border-color: var(--gobi-color-accent);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+.wpcf7-form .wpcf7-submit {
+  background-color: var(--gobi-color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-3) var(--gobi-space-5);
+  font-size: var(--gobi-text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.wpcf7-form .wpcf7-submit:hover {
+  background-color: var(--gobi-color-accent-strong);
+  transform: translateY(-1px);
+}
+
+.wpcf7-form .wpcf7-response-output {
+  padding: var(--gobi-space-4);
+  border-radius: var(--gobi-radius-md);
+  margin-top: var(--gobi-space-4);
+  font-size: var(--gobi-text-sm);
+}
+
+.wpcf7-form .wpcf7-mail-sent-ok {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+  border: 1px solid #16a34a;
+}
+
+.wpcf7-form .wpcf7-validation-errors,
+.wpcf7-form .wpcf7-mail-sent-ng {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+
+/* 
+ * PLUGIN: Yoast SEO
+ * CONFLICTO: Los breadcrumbs no siguen el diseño del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con components/breadcrumbs.css
+ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+  padding: var(--gobi-space-4) 0;
+  font-size: var(--gobi-text-sm);
+}
+
+.breadcrumb a {
+  color: var(--gobi-color-text-soft);
+  text-decoration: none;
+  transition: color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.breadcrumb a:hover {
+  color: var(--gobi-color-accent);
+}
+
+.breadcrumb .breadcrumb_last {
+  color: var(--gobi-color-text);
+  font-weight: 500;
+}
+
+/* 
+ * PLUGIN: WooCommerce
+ * CONFLICTO: Los productos y carrito no siguen el diseño del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con el sistema de componentes
+ */
+.woocommerce .product {
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  padding: var(--gobi-space-5);
+  margin-bottom: var(--gobi-space-5);
+  transition: transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.woocommerce .product:hover {
+  transform: translateY(-2px);
+}
+
+.woocommerce .product .woocommerce-loop-product__title {
+  font-size: var(--gobi-text-lg);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  margin-bottom: var(--gobi-space-3);
+}
+
+.woocommerce .product .price {
+  font-size: var(--gobi-text-xl);
+  font-weight: 700;
+  color: var(--gobi-color-accent);
+  margin-bottom: var(--gobi-space-4);
+}
+
+.woocommerce .button {
+  background-color: var(--gobi-color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-3) var(--gobi-space-5);
+  font-size: var(--gobi-text-base);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.woocommerce .button:hover {
+  background-color: var(--gobi-color-accent-strong);
+  transform: translateY(-1px);
+}
+
+/* 
+ * PLUGIN: Elementor
+ * CONFLICTO: Los widgets de Elementor no usan los tokens del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con el sistema de diseño
+ */
+.elementor-widget {
+  margin-bottom: var(--gobi-space-5);
+}
+
+.elementor-heading-title {
+  color: var(--gobi-color-text) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+}
+
+.elementor-widget-text-editor {
+  color: var(--gobi-color-text) !important;
+  line-height: 1.7 !important;
+}
+
+.elementor-widget-text-editor p {
+  margin-bottom: var(--gobi-space-4) !important;
+}
+
+.elementor-button {
+  background-color: var(--gobi-color-accent) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--gobi-radius-md) !important;
+  padding: var(--gobi-space-3) var(--gobi-space-5) !important;
+  font-size: var(--gobi-text-base) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: 
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.elementor-button:hover {
+  background-color: var(--gobi-color-accent-strong) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 
+ * PLUGIN: WPML
+ * CONFLICTO: El selector de idiomas no sigue el diseño del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con components/nav.css
+ */
+.wpml-language-switcher {
+  display: flex;
+  gap: var(--gobi-space-3);
+  align-items: center;
+}
+
+.wpml-language-switcher a {
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  color: var(--gobi-color-text);
+  text-decoration: none;
+  font-size: var(--gobi-text-sm);
+  font-weight: 500;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.wpml-language-switcher a:hover,
+.wpml-language-switcher a.active {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+/* 
+ * PLUGIN: Gravity Forms
+ * CONFLICTO: Los formularios no siguen el diseño del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con components/forms.css
+ */
+.gform_wrapper {
+  max-width: var(--gobi-reading-width);
+  margin: 0 auto;
+}
+
+.gform_wrapper .gfield {
+  margin-bottom: var(--gobi-space-5);
+}
+
+.gform_wrapper .gfield_label {
+  display: block;
+  font-size: var(--gobi-text-sm);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  margin-bottom: var(--gobi-space-2);
+}
+
+.gform_wrapper input[type="text"],
+.gform_wrapper input[type="email"],
+.gform_wrapper input[type="tel"],
+.gform_wrapper textarea,
+.gform_wrapper select {
+  width: 100%;
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-3) var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  color: var(--gobi-color-text);
+  font-family: var(--gobi-font-sans);
+  font-size: var(--gobi-text-base);
+}
+
+.gform_wrapper input:focus,
+.gform_wrapper textarea:focus,
+.gform_wrapper select:focus {
+  outline: none;
+  border-color: var(--gobi-color-accent);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+.gform_wrapper .gform_button {
+  background-color: var(--gobi-color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-3) var(--gobi-space-5);
+  font-size: var(--gobi-text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    transform var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gform_wrapper .gform_button:hover {
+  background-color: var(--gobi-color-accent-strong);
+  transform: translateY(-1px);
+}
+
+.gform_wrapper .validation_message {
+  font-size: var(--gobi-text-sm);
+  color: #dc2626;
+  margin-top: var(--gobi-space-2);
+}
+
+/* 
+ * PLUGIN: Jetpack
+ * CONFLICTO: Los widgets de Jetpack no siguen el diseño del theme
+ * SOLUCIÓN: Aplicar estilos consistentes con el sistema de componentes
+ */
+.jetpack_widget_social_icons ul {
+  display: flex;
+  gap: var(--gobi-space-3);
+}
+
+.jetpack_widget_social_icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gobi-color-bg);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: 50%;
+  color: var(--gobi-color-text-soft);
+  text-decoration: none;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.jetpack_widget_social_icons a:hover {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+/* 
+ * NOTA: Este archivo debe mantenerse actualizado según los plugins
+ * que se instalen en el sitio. Cada nuevo plugin que cause conflictos
+ * visuales debe tener su sección correspondiente aquí.
+ */

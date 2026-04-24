@@ -1,0 +1,267 @@
+/* Sistema de formularios GOBi */
+.gobi-form {
+  max-width: var(--gobi-reading-width);
+}
+
+.gobi-form-group {
+  margin-bottom: var(--gobi-space-5);
+}
+
+.gobi-form-group--sm {
+  margin-bottom: var(--gobi-space-4);
+}
+
+.gobi-form-group--lg {
+  margin-bottom: var(--gobi-space-6);
+}
+
+/* Labels */
+.gobi-label {
+  display: block;
+  font-size: var(--gobi-text-sm);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  margin-bottom: var(--gobi-space-2);
+  line-height: 1.4;
+}
+
+.gobi-label--required::after {
+  content: " *";
+  color: var(--gobi-color-accent);
+}
+
+.gobi-label--optional {
+  font-weight: 400;
+  color: var(--gobi-color-text-soft);
+}
+
+/* Form controls */
+.gobi-input,
+.gobi-textarea,
+.gobi-select {
+  width: 100%;
+  padding: var(--gobi-space-3) var(--gobi-space-4);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  font-family: var(--gobi-font-sans);
+  font-size: var(--gobi-text-base);
+  line-height: 1.5;
+  color: var(--gobi-color-text);
+  background-color: var(--gobi-color-surface);
+  transition: 
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    box-shadow var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-input:focus,
+.gobi-textarea:focus,
+.gobi-select:focus {
+  outline: none;
+  border-color: var(--gobi-color-accent);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+.gobi-input::placeholder,
+.gobi-textarea::placeholder {
+  color: var(--gobi-color-text-soft);
+  opacity: 1;
+}
+
+.gobi-input:disabled,
+.gobi-textarea:disabled,
+.gobi-select:disabled {
+  background-color: var(--gobi-color-bg);
+  color: var(--gobi-color-text-soft);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Textarea */
+.gobi-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.gobi-textarea--sm {
+  min-height: 80px;
+}
+
+.gobi-textarea--lg {
+  min-height: 200px;
+}
+
+/* Select */
+.gobi-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--gobi-space-3) center;
+  background-size: 12px 8px;
+  padding-right: var(--gobi-space-8);
+}
+
+/* Checkboxes and radios */
+.gobi-checkbox-group,
+.gobi-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gobi-space-3);
+}
+
+.gobi-checkbox-item,
+.gobi-radio-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-3);
+  cursor: pointer;
+}
+
+.gobi-checkbox,
+.gobi-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-sm);
+  background-color: var(--gobi-color-surface);
+  cursor: pointer;
+  position: relative;
+  transition: 
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-radio {
+  border-radius: 50%;
+}
+
+.gobi-checkbox:checked,
+.gobi-radio:checked {
+  background-color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+}
+
+.gobi-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.gobi-radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.gobi-checkbox:focus,
+.gobi-radio:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+/* Form field sizes */
+.gobi-input--sm,
+.gobi-textarea--sm,
+.gobi-select--sm {
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+  font-size: var(--gobi-text-sm);
+}
+
+.gobi-input--lg,
+.gobi-textarea--lg,
+.gobi-select--lg {
+  padding: var(--gobi-space-4) var(--gobi-space-5);
+  font-size: var(--gobi-text-lg);
+}
+
+/* Form states */
+.gobi-form-group--error .gobi-input,
+.gobi-form-group--error .gobi-textarea,
+.gobi-form-group--error .gobi-select {
+  border-color: #dc2626;
+}
+
+.gobi-form-group--error .gobi-input:focus,
+.gobi-form-group--error .gobi-textarea:focus,
+.gobi-form-group--error .gobi-select:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.gobi-form-group--success .gobi-input,
+.gobi-form-group--success .gobi-textarea,
+.gobi-form-group--success .gobi-select {
+  border-color: #16a34a;
+}
+
+.gobi-form-group--success .gobi-input:focus,
+.gobi-form-group--success .gobi-textarea:focus,
+.gobi-form-group--success .gobi-select:focus {
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* Help text and error messages */
+.gobi-help-text {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+  margin-top: var(--gobi-space-2);
+  line-height: 1.4;
+}
+
+.gobi-error-text {
+  font-size: var(--gobi-text-sm);
+  color: #dc2626;
+  margin-top: var(--gobi-space-2);
+  line-height: 1.4;
+}
+
+.gobi-success-text {
+  font-size: var(--gobi-text-sm);
+  color: #16a34a;
+  margin-top: var(--gobi-space-2);
+  line-height: 1.4;
+}
+
+/* Form actions */
+.gobi-form-actions {
+  display: flex;
+  gap: var(--gobi-space-4);
+  margin-top: var(--gobi-space-8);
+}
+
+.gobi-form-actions--center {
+  justify-content: center;
+}
+
+.gobi-form-actions--end {
+  justify-content: flex-end;
+}
+
+.gobi-form-actions--between {
+  justify-content: space-between;
+}
+
+/* Fieldset */
+.gobi-fieldset {
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-6);
+  margin-bottom: var(--gobi-space-5);
+}
+
+.gobi-legend {
+  font-size: var(--gobi-text-lg);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  padding: 0 var(--gobi-space-3);
+  margin: 0;
+}

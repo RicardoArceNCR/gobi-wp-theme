@@ -1,0 +1,141 @@
+/* Sistema de layout GOBi */
+.gobi-container {
+  width: min(100% - 2rem, var(--gobi-container-xl));
+  margin-inline: auto;
+}
+
+.gobi-container--sm {
+  width: min(100% - 2rem, var(--gobi-container-sm));
+  margin-inline: auto;
+}
+
+.gobi-container--md {
+  width: min(100% - 2rem, var(--gobi-container-md));
+  margin-inline: auto;
+}
+
+.gobi-container--lg {
+  width: min(100% - 2rem, var(--gobi-container-lg));
+  margin-inline: auto;
+}
+
+.gobi-container--xl {
+  width: min(100% - 2rem, var(--gobi-container-xl));
+  margin-inline: auto;
+}
+
+/* Reading width */
+.gobi-reading {
+  max-width: var(--gobi-reading-width);
+}
+
+/* Sections */
+.gobi-section {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.gobi-section--sm {
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+.gobi-section--lg {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+/* Stack layout - vertical spacing */
+.gobi-stack > * + * {
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-stack--sm > * + * {
+  margin-top: var(--gobi-space-2);
+}
+
+.gobi-stack--md > * + * {
+  margin-top: var(--gobi-space-4);
+}
+
+.gobi-stack--lg > * + * {
+  margin-top: var(--gobi-space-6);
+}
+
+.gobi-stack--xl > * + * {
+  margin-top: var(--gobi-space-8);
+}
+
+/* Cluster layout - horizontal spacing */
+.gobi-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gobi-space-4);
+  align-items: center;
+}
+
+.gobi-cluster--sm { gap: var(--gobi-space-2); }
+.gobi-cluster--md { gap: var(--gobi-space-4); }
+.gobi-cluster--lg { gap: var(--gobi-space-6); }
+.gobi-cluster--xl { gap: var(--gobi-space-8); }
+
+.gobi-cluster--start { justify-content: flex-start; }
+.gobi-cluster--center { justify-content: center; }
+.gobi-cluster--end { justify-content: flex-end; }
+.gobi-cluster--between { justify-content: space-between; }
+
+/* Grid system */
+.gobi-grid {
+  display: grid;
+  gap: var(--gobi-space-5);
+}
+
+.gobi-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gobi-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gobi-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gobi-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gobi-grid--gap-sm { gap: var(--gobi-space-2); }
+.gobi-grid--gap-md { gap: var(--gobi-space-4); }
+.gobi-grid--gap-lg { gap: var(--gobi-space-6); }
+.gobi-grid--gap-xl { gap: var(--gobi-space-8); }
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .gobi-grid--2,
+  .gobi-grid--3,
+  .gobi-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gobi-grid--3,
+  .gobi-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Center */
+.gobi-center {
+  margin-inline: auto;
+}
+
+/* Full width */
+.gobi-full {
+  width: 100%;
+}
+
+/* Max width */
+.gobi-max-w-sm { max-width: var(--gobi-container-sm); }
+.gobi-max-w-md { max-width: var(--gobi-container-md); }
+.gobi-max-w-lg { max-width: var(--gobi-container-lg); }
+.gobi-max-w-xl { max-width: var(--gobi-container-xl); }

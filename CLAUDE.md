@@ -52,15 +52,21 @@ Nunca usar WordPress core “pelado” como sustituto de `gobi-core`.
 Responsabilidad:
 - Blade layouts
 - sections / partials
-- Tailwind
+- sistema de estilos CSS estructurado
 - view composers
 - theme.json
 - render de front y back visual
+- tokens globales de diseño
+- componentes visuales compartidos
+- compatibilidad visual con WordPress
 
 Sage:
 - sí muestra datos
 - sí consume helpers del plugin
 - sí aplica UI condicional por capability
+- sí define el lenguaje visual global del proyecto
+- sí provee componentes reutilizables
+- sí asegura consistencia visual
 
 Sage:
 - no define workflow
@@ -68,6 +74,10 @@ Sage:
 - no asigna roles del producto
 - no implementa bitácora como sistema principal
 - no guarda estado crítico del producto
+- no mezcla dominio con presentación
+- no crea estilos improvisados por página sin sistema
+- no depende de overrides caóticos
+- no resuelve cada pantalla con clases nuevas sin criterio
 
 ---
 
@@ -312,14 +322,18 @@ Una solución es correcta si cumple estas condiciones:
 
 ## Lo que nunca debe proponer una IA en este proyecto
 
-- “hagamos toda la lógica en Blade”
-- “usemos ACF para controlar estados”
-- “usemos taxonomías para workflow”
-- “guardemos toda la bitácora en postmeta sin criterio”
-- “resolvamos permisos solo ocultando botones”
-- “metamos dominio en `functions.php`”
-- “dejemos el plugin para después”
-- “hagamos headless desde ya aunque retrase la v1”
+- "hagamos toda la lógica en Blade"
+- "usemos ACF para controlar estados"
+- "usemos taxonomías para workflow"
+- "guardemos toda la bitácora en postmeta sin criterio"
+- "resolvamos permisos solo ocultando botones"
+- "metamos dominio en `functions.php`"
+- "dejemos el plugin para después"
+- "hagamos headless desde ya aunque retrase la v1"
+- "usemos CSS improvisado por página sin sistema"
+- "mezclemos tokens con hacks visuales"
+- "dependamos de overrides caóticos para resolver todo"
+- "usemos el CSS como parche constante"
 
 ---
 

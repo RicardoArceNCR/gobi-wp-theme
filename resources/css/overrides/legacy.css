@@ -1,0 +1,307 @@
+/* 
+ * DEUDA TÉCNICA CONTROLADA - LEGACY CSS
+ * 
+ * Este archivo contiene únicamente estilos temporales para mantener compatibilidad
+ * con código antiguo que aún no ha sido migrado al nuevo sistema de componentes.
+ * 
+ * REGLA: Cada override debe incluir:
+ * 1. Comentario explicando el motivo
+ * 2. Referencia al componente/feature que debería reemplazarlo
+ * 3. Fecha estimada de eliminación
+ */
+
+/* 
+ * TEMP: Mantener compatibilidad con estilos del theme antiguo
+ * Motivo: El archivo app.css original tenía estilos directos que necesitan ser migrados
+ * Reemplazo: Migrar a componentes específicos (nav, cards, etc.)
+ * Eliminar: Cuando se complete la migración de todos los templates
+ */
+
+/* Estilos antiguos de header - migrar a components/nav.css */
+header {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #e2e8f0;
+  background-color: white;
+}
+
+/* Estilos antiguos de main - migrar a layout.css */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Estilos antiguos de sidebar - migrar a components/sidebar.css */
+.sidebar {
+  background-color: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Estilos antiguos de footer - migrar a components/footer.css */
+footer {
+  padding-top: 3rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  margin-top: 4rem;
+}
+
+/* Estilos antiguos de navegación - migrar a components/nav.css */
+.main-navigation {
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-navigation a {
+  font-weight: 500;
+  color: #475569;
+}
+
+.main-navigation a:hover {
+  color: #1e293b;
+}
+
+/* Estilos antiguos de artículos - migrar a components/cards.css */
+article {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Estilos antiguos de headings - migrar a core/typography.css */
+h1, h2, h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+
+/* Estilos antiguos de título del sitio - migrar a components/brand.css */
+.site-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+/* 
+ * TEMP: Compatibilidad con clases de terceros
+ * Motivo: Algunos plugins o componentes externos usan clases específicas
+ * Reemplazo: Crear wrappers específicos para cada plugin
+ * Eliminar: Cuando se identifiquen todos los plugins afectados
+ */
+
+/* Compatibilidad con Bootstrap si existe */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  padding: 0 15px;
+  flex: 1;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* 
+ * TEMP: Fixes específicos para componentes existentes
+ * Motivo: Algunos componentes tienen estilos inline o específicos que rompen el diseño
+ * Reemplazo: Refactorizar los componentes para usar el sistema de tokens
+ * Eliminar: Cuando se refactoricen todos los componentes afectados
+ */
+
+/* Fix para imágenes que no respetan border-radius */
+img:not(.gobi-card__image):not(.gobi-diputado-photo):not(.gobi-leader-card__photo):not(.gobi-member-card__photo) {
+  border-radius: var(--gobi-radius-md);
+}
+
+/* Fix para enlaces que no heredan colores correctamente */
+a:not(.gobi-btn):not(.gobi-nav__link):not(.gobi-card__title a) {
+  color: var(--gobi-color-accent);
+}
+
+/* Fix para elementos con fondos hardcodeados */
+div[style*="background"]:not(.gobi-modal):not(.gobi-drawer) {
+  background-color: var(--gobi-color-surface) !important;
+}
+
+/* 
+ * TEMP: Compatibilidad con formularios antiguos
+ * Motivo: Formularios creados antes del nuevo sistema de componentes
+ * Reemplazo: Migrar a components/forms.css
+ * Eliminar: Cuando se actualicen todos los formularios
+ */
+
+input[type="text"]:not(.gobi-input),
+input[type="email"]:not(.gobi-input),
+input[type="password"]:not(.gobi-input),
+textarea:not(.gobi-textarea) {
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-md);
+  padding: var(--gobi-space-3) var(--gobi-space-4);
+  background-color: var(--gobi-color-surface);
+  color: var(--gobi-color-text);
+  font-family: var(--gobi-font-sans);
+}
+
+input[type="text"]:not(.gobi-input):focus,
+input[type="email"]:not(.gobi-input):focus,
+input[type="password"]:not(.gobi-input):focus,
+textarea:not(.gobi-textarea):focus {
+  outline: none;
+  border-color: var(--gobi-color-accent);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+/* 
+ * TEMP: Compatibilidad con tablas antiguas
+ * Motivo: Tablas creadas antes del nuevo sistema de componentes
+ * Reemplazo: Migrar a components/tables.css
+ * Eliminar: Cuando se actualicen todas las tablas
+ */
+
+table:not(.gobi-table) {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--gobi-space-4) 0;
+}
+
+table:not(.gobi-table) th,
+table:not(.gobi-table) td {
+  padding: var(--gobi-space-3) var(--gobi-space-4);
+  text-align: left;
+  border: 1px solid var(--gobi-color-border);
+}
+
+table:not(.gobi-table) th {
+  background-color: var(--gobi-color-bg);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+}
+
+/* 
+ * TEMP: Parches para responsive design
+ * Motivo: Algunos elementos antiguos no son responsive
+ * Reemplazo: Implementar sistema de grid responsive
+ * Eliminar: Cuando se complete la migración responsive
+ */
+
+@media (max-width: 768px) {
+  /* Forzar mobile-first en elementos antiguos */
+  .main-navigation ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .sidebar {
+    margin-top: 1rem;
+  }
+  
+  article {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 
+ * TEMP: Animaciones y transiciones legacy
+ * Motivo: Mantener compatibilidad con animaciones personalizadas antiguas
+ * Reemplazo: Usar variables de motion del sistema
+ * Eliminar: Cuando se migren todas las animaciones
+ */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 
+ * TEMP: Utilidades legacy
+ * Motivo: Mantener compatibilidad con clases utilitarias antiguas
+ * Reemplazo: Usar sistema de utilidades core/utilities.css
+ * Eliminar: Cuando se complete la migración de utilidades
+ */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--gobi-space-1); }
+.mb-2 { margin-bottom: var(--gobi-space-2); }
+.mb-3 { margin-bottom: var(--gobi-space-3); }
+.mb-4 { margin-bottom: var(--gobi-space-4); }
+.mb-5 { margin-bottom: var(--gobi-space-5); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--gobi-space-1); }
+.mt-2 { margin-top: var(--gobi-space-2); }
+.mt-3 { margin-top: var(--gobi-space-3); }
+.mt-4 { margin-top: var(--gobi-space-4); }
+.mt-5 { margin-top: var(--gobi-space-5); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--gobi-space-1); }
+.p-2 { padding: var(--gobi-space-2); }
+.p-3 { padding: var(--gobi-space-3); }
+.p-4 { padding: var(--gobi-space-4); }
+.p-5 { padding: var(--gobi-space-5); }
+
+.hidden { display: none; }
+.block { display: block; }
+.inline { display: inline; }
+.flex { display: flex; }
+
+/* 
+ * NOTA: Este archivo debe reducirse constantemente.
+ * Cada vez que se migre un componente o se refactorice una sección,
+ * los estilos correspondientes deben eliminarse de este archivo.
+ * 
+ * El objetivo es que este archivo eventualmente quede vacío.
+ */

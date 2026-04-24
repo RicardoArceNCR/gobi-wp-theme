@@ -1,0 +1,292 @@
+/* Sistema de tablas GOBi */
+.gobi-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--gobi-color-surface);
+  border: 1px solid var(--gobi-color-border);
+  border-radius: var(--gobi-radius-lg);
+  overflow: hidden;
+}
+
+.gobi-table th,
+.gobi-table td {
+  padding: var(--gobi-space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--gobi-color-border);
+}
+
+.gobi-table th {
+  background-color: var(--gobi-color-bg);
+  font-weight: 600;
+  color: var(--gobi-color-text);
+  font-size: var(--gobi-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.gobi-table td {
+  color: var(--gobi-color-text);
+  font-size: var(--gobi-text-base);
+}
+
+.gobi-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table variants */
+.gobi-table--striped tbody tr:nth-child(even) {
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-table--hover tbody tr:hover {
+  background-color: rgba(185, 28, 28, 0.05);
+}
+
+.gobi-table--borderless {
+  border: none;
+}
+
+.gobi-table--borderless th,
+.gobi-table--borderless td {
+  border: none;
+}
+
+.gobi-table--compact th,
+.gobi-table--compact td {
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+}
+
+.gobi-table--comfortable th,
+.gobi-table--comfortable td {
+  padding: var(--gobi-space-5) var(--gobi-space-6);
+}
+
+/* Table responsive */
+.gobi-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gobi-table--responsive {
+  min-width: 600px;
+}
+
+/* Table header alignment */
+.gobi-table th--left { text-align: left; }
+.gobi-table th--center { text-align: center; }
+.gobi-table th--right { text-align: right; }
+
+.gobi-table td--left { text-align: left; }
+.gobi-table td--center { text-align: center; }
+.gobi-table td--right { text-align: right; }
+
+/* Table cell width */
+.gobi-table th--nowrap,
+.gobi-table td--nowrap {
+  white-space: nowrap;
+}
+
+.gobi-table th--wrap,
+.gobi-table td--wrap {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Table sort indicators */
+.gobi-table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gobi-space-1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.gobi-table__sort:hover {
+  color: var(--gobi-color-accent);
+}
+
+.gobi-table__sort::after {
+  content: "⇅";
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.gobi-table__sort--asc::after {
+  content: "↑";
+  opacity: 1;
+  color: var(--gobi-color-accent);
+}
+
+.gobi-table__sort--desc::after {
+  content: "↓";
+  opacity: 1;
+  color: var(--gobi-color-accent);
+}
+
+/* Table selection */
+.gobi-table__select {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.gobi-table__row--selected {
+  background-color: rgba(185, 28, 28, 0.1);
+}
+
+/* Table actions */
+.gobi-table__actions {
+  display: flex;
+  gap: var(--gobi-space-2);
+  justify-content: flex-end;
+}
+
+.gobi-table__action {
+  padding: var(--gobi-space-2);
+  border: none;
+  background: none;
+  color: var(--gobi-color-text-soft);
+  cursor: pointer;
+  border-radius: var(--gobi-radius-sm);
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-table__action:hover {
+  color: var(--gobi-color-accent);
+  background-color: var(--gobi-color-bg);
+}
+
+/* Table status */
+.gobi-table__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gobi-space-2);
+}
+
+.gobi-table__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.gobi-table__status--active .gobi-table__status-dot {
+  background-color: #16a34a;
+}
+
+.gobi-table__status--inactive .gobi-table__status-dot {
+  background-color: var(--gobi-color-text-soft);
+}
+
+.gobi-table__status--pending .gobi-table__status-dot {
+  background-color: #ea580c;
+}
+
+.gobi-table__status--error .gobi-table__status-dot {
+  background-color: #dc2626;
+}
+
+/* Table pagination */
+.gobi-table__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gobi-space-4);
+  border-top: 1px solid var(--gobi-color-border);
+  background-color: var(--gobi-color-bg);
+}
+
+.gobi-table__pagination-info {
+  font-size: var(--gobi-text-sm);
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-table__pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--gobi-space-2);
+}
+
+.gobi-table__pagination-button {
+  padding: var(--gobi-space-2) var(--gobi-space-3);
+  border: 1px solid var(--gobi-color-border);
+  background-color: var(--gobi-color-surface);
+  color: var(--gobi-color-text);
+  border-radius: var(--gobi-radius-sm);
+  font-size: var(--gobi-text-sm);
+  cursor: pointer;
+  transition: 
+    color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    background-color var(--gobi-duration-fast) var(--gobi-ease-standard),
+    border-color var(--gobi-duration-fast) var(--gobi-ease-standard);
+}
+
+.gobi-table__pagination-button:hover:not(:disabled) {
+  color: var(--gobi-color-accent);
+  border-color: var(--gobi-color-accent);
+}
+
+.gobi-table__pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gobi-table__pagination-button--active {
+  background-color: var(--gobi-color-accent);
+  color: white;
+  border-color: var(--gobi-color-accent);
+}
+
+/* Empty table state */
+.gobi-table__empty {
+  padding: var(--gobi-space-8);
+  text-align: center;
+  color: var(--gobi-color-text-soft);
+}
+
+.gobi-table__empty-icon {
+  font-size: 3rem;
+  margin-bottom: var(--gobi-space-4);
+  opacity: 0.5;
+}
+
+.gobi-table__empty-title {
+  font-size: var(--gobi-text-lg);
+  font-weight: 600;
+  margin-bottom: var(--gobi-space-2);
+  color: var(--gobi-color-text);
+}
+
+.gobi-table__empty-description {
+  font-size: var(--gobi-text-base);
+  margin-bottom: var(--gobi-space-4);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Loading table state */
+.gobi-table__loading {
+  padding: var(--gobi-space-8);
+  text-align: center;
+}
+
+.gobi-table__loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--gobi-color-border);
+  border-top: 3px solid var(--gobi-color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--gobi-space-4);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

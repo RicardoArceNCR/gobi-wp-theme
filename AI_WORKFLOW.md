@@ -176,6 +176,9 @@ Ejemplos:
 - listados
 - templates de detalle
 - composers
+- sistema de estilos CSS estructurado
+- componentes visuales compartidos
+- tokens globales de diseño
 
 ### D. ACF
 Ejemplos:
@@ -225,6 +228,8 @@ La IA debe responder con:
 - clases o componentes
 - qué datos vienen del plugin
 - qué no debe vivir ahí
+- estructura de estilos por capas (core, components, sections, vendors, overrides)
+- tokens CSS y componentes reutilizables
 
 ### Si es ACF
 La IA debe responder con:
@@ -324,6 +329,9 @@ No debe distraerse con:
 - headless en v1
 - automatizaciones AI complejas antes de cerrar la base
 - ideas visuales si todavía falta la capa de dominio
+- estilos improvisados sin sistema
+- mezclar tokens con hacks visuales
+- depender de overrides caóticos para resolver todo
 
 ---
 
